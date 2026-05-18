@@ -715,6 +715,206 @@
       line-height: 0.95;
     }
 
+    .payment {
+      background: var(--soft);
+    }
+
+    .payment-toggle {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 22px;
+      padding: clamp(26px, 5vw, 46px);
+      border: 1px solid rgba(201, 155, 59, 0.42);
+      border-radius: 16px;
+      color: var(--white);
+      background:
+        linear-gradient(150deg, rgba(242, 207, 123, 0.2), transparent 42%),
+        #050505;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .payment-toggle h3 {
+      margin-bottom: 10px;
+      color: var(--white);
+      font-size: clamp(1.55rem, 4vw, 2.8rem);
+    }
+
+    .payment-toggle p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 760px;
+    }
+
+    .advance-badge {
+      display: grid;
+      place-items: center;
+      min-width: 132px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(242, 207, 123, 0.46);
+      border-radius: 50%;
+      color: var(--gold-2);
+      font-size: 2.3rem;
+      font-weight: 950;
+      line-height: 0.95;
+      text-align: center;
+    }
+
+    .advance-badge small {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .payment-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 22px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      font-weight: 950;
+      width: fit-content;
+    }
+
+    .payment-details {
+      display: none;
+    }
+
+    .payment-details.open {
+      display: block;
+    }
+
+    .payment-details.open .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .payment-card {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: clamp(24px, 4vw, 34px);
+      border: 1px solid rgba(201, 155, 59, 0.28);
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+    }
+
+    .payment-card.featured {
+      color: var(--white);
+      background:
+        linear-gradient(150deg, rgba(242, 207, 123, 0.18), transparent 42%),
+        #080808;
+    }
+
+    .payment-card.featured p,
+    .payment-card.featured .payment-value {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .payment-method h3 {
+      margin: 0;
+    }
+
+    .payment-tag {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--black);
+      background: var(--gold-2);
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .payment-row {
+      display: grid;
+      gap: 7px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(17, 17, 17, 0.1);
+    }
+
+    .featured .payment-row {
+      border-top-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .payment-label {
+      color: var(--gold-dark);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .featured .payment-label {
+      color: var(--gold-2);
+    }
+
+    .payment-value {
+      color: var(--ink);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+
+    .copy-btn {
+      align-self: flex-start;
+      min-height: 40px;
+      padding: 0 13px;
+      border: 1px solid rgba(201, 155, 59, 0.42);
+      border-radius: var(--radius);
+      color: var(--ink);
+      background: rgba(242, 207, 123, 0.22);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .featured .copy-btn {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .payment-note {
+      display: grid;
+      gap: 18px;
+      padding: clamp(24px, 4vw, 34px);
+      border-radius: 14px;
+      color: var(--white);
+      background: #050505;
+    }
+
+    .payment-note p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .payment-note .btn {
+      align-self: start;
+    }
+
     .final-cta {
       padding: 94px 0;
       text-align: center;
@@ -924,9 +1124,18 @@
       .section-head,
       .solution,
       .bonus-box,
+      .payment-grid,
       .contact-grid,
       .footer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .payment-toggle {
+        grid-template-columns: 1fr;
+      }
+
+      .advance-badge {
+        width: 132px;
       }
 
       .brand-visual {
@@ -1374,6 +1583,78 @@
       </div>
     </section>
 
+    <section class="payment" id="payment">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Payment information</p>
+            <h2>Ready to confirm? Pay through your preferred method.</h2>
+          </div>
+          <p class="lead">A 20% advance payment is required before booking any service. Tap the card below to view payment details.</p>
+        </div>
+
+        <button class="payment-toggle reveal" id="paymentToggle" type="button" aria-expanded="false" aria-controls="paymentDetails">
+          <span>
+            <h3>Secure Your Booking</h3>
+            <p>Pay 20% in advance to reserve your project slot. Click here to check account details, copy payment info, and send your screenshot on WhatsApp.</p>
+            <span class="payment-cta" id="paymentCtaText">Check Payment Details</span>
+          </span>
+          <span class="advance-badge">20%<small>Advance</small></span>
+        </button>
+
+        <div class="payment-details" id="paymentDetails">
+          <div class="payment-grid">
+            <div class="payment-card featured reveal">
+              <div class="payment-method">
+                <h3>Bank of Punjab</h3>
+                <span class="payment-tag">Bank transfer</span>
+              </div>
+              <div class="payment-row">
+                <span class="payment-label">Account Holder</span>
+                <span class="payment-value">Zubair Ahmad</span>
+              </div>
+              <div class="payment-row">
+                <span class="payment-label">Account Number</span>
+                <span class="payment-value">6300248994900010</span>
+                <button class="copy-btn" type="button" data-copy="6300248994900010">Copy Account</button>
+              </div>
+              <div class="payment-row">
+                <span class="payment-label">IBAN</span>
+                <span class="payment-value">PK32BPUN6300248994900010</span>
+                <button class="copy-btn" type="button" data-copy="PK32BPUN6300248994900010">Copy IBAN</button>
+              </div>
+            </div>
+
+            <div class="payment-card reveal">
+              <div class="payment-method">
+                <h3>EasyPaisa</h3>
+                <span class="payment-tag">Mobile wallet</span>
+              </div>
+              <div class="payment-row">
+                <span class="payment-label">Account Holder</span>
+                <span class="payment-value">Zubair Ahmad</span>
+              </div>
+              <div class="payment-row">
+                <span class="payment-label">Account Number</span>
+                <span class="payment-value">03355494075</span>
+                <button class="copy-btn" type="button" data-copy="03355494075">Copy Account</button>
+              </div>
+              <div class="payment-row">
+                <span class="payment-label">IBAN</span>
+                <span class="payment-value">PK86TMFB0000000051310916</span>
+                <button class="copy-btn" type="button" data-copy="PK86TMFB0000000051310916">Copy IBAN</button>
+              </div>
+            </div>
+
+            <div class="payment-note reveal">
+              <h3>Please verify details before making any transfer.</h3>
+              <p>Booking starts after 20% advance payment. Send the payment screenshot on WhatsApp with your selected package name for quick confirmation.</p>
+              <a class="btn btn-primary" href="https://wa.me/923343599828?text=Hi%20Zubair%2C%20I%20have%20made%20a%2020%25%20advance%20payment%20and%20want%20to%20share%20the%20screenshot" target="_blank" rel="noopener">Send Payment Screenshot</a>
+            </div>
+          </div>
+        </div>
+    </section>
+
     <section class="final-cta" id="contact">
       <div class="container">
         <p class="eyebrow">Start today</p>
@@ -1456,6 +1737,9 @@
     const navLinks = document.querySelector("#navLinks");
     const form = document.querySelector("#lead-form");
     const formNote = document.querySelector("#formNote");
+    const paymentToggle = document.querySelector("#paymentToggle");
+    const paymentDetails = document.querySelector("#paymentDetails");
+    const paymentCtaText = document.querySelector("#paymentCtaText");
 
     menuBtn.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
@@ -1482,6 +1766,12 @@
 
     document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
+    paymentToggle.addEventListener("click", () => {
+      const isOpen = paymentDetails.classList.toggle("open");
+      paymentToggle.setAttribute("aria-expanded", String(isOpen));
+      paymentCtaText.textContent = isOpen ? "Hide Payment Details" : "Check Payment Details";
+    });
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = new FormData(form);
@@ -1500,6 +1790,22 @@
       formNote.textContent = `Thanks ${name}. Opening WhatsApp with your ${packageName} brief.`;
       window.open(whatsappUrl, "_blank", "noopener");
       form.reset();
+    });
+
+    document.querySelectorAll(".copy-btn").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const value = button.dataset.copy;
+        const originalText = button.textContent;
+        try {
+          await navigator.clipboard.writeText(value);
+          button.textContent = "Copied";
+        } catch {
+          button.textContent = value;
+        }
+        window.setTimeout(() => {
+          button.textContent = originalText;
+        }, 1800);
+      });
     });
   </script>
 </body>
