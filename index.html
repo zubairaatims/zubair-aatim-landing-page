@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zubair Aatim - Professional Creative Studio</title>
+  <meta name="description" content="Premium branding, design, and marketing agency for YouTubers, startups, local shops, and growing businesses in Pakistan." />
+  <style>
+    :root {
+      --black: #050505;
+      --ink: #111111;
+      --muted: #66645f;
+      --line: rgba(17, 17, 17, 0.12);
+      --white: #ffffff;
+      --soft: #f7f4ef;
+      --gold: #c99b3b;
+      --gold-2: #f2cf7b;
+      --gold-dark: #8d6620;
+      --success: #20b15a;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.12);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .urdu {
+      direction: rtl;
+      font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Segoe UI", Tahoma, sans-serif;
+      color: rgba(17, 17, 17, 0.72);
+      font-size: 0.96rem;
+      line-height: 1.95;
+    }
+
+    .dark .urdu,
+    .hero .urdu,
+    footer .urdu {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 18px;
+      color: var(--white);
+      font-size: clamp(2.7rem, 8vw, 6.7rem);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 4.5vw, 4.3rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.22rem;
+      line-height: 1.18;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .lead {
+      max-width: 650px;
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    }
+
+    .dark {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .dark p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      box-shadow: 0 18px 38px rgba(201, 155, 59, 0.22);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.26);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-light {
+      color: var(--ink);
+      border-color: var(--line);
+      background: var(--white);
+    }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 40;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      color: var(--white);
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .brand span {
+      color: var(--gold-2);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-2);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      color: var(--white);
+      background: transparent;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      overflow: hidden;
+      padding: 126px 0 50px;
+      background:
+        linear-gradient(120deg, rgba(5, 5, 5, 0.98), rgba(5, 5, 5, 0.82)),
+        radial-gradient(circle at 78% 25%, rgba(201, 155, 59, 0.34), transparent 30%),
+        #050505;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 160px;
+      background: linear-gradient(0deg, rgba(5, 5, 5, 1), transparent);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 30px 0;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.055);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .trust-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold-2);
+    }
+
+    .brand-visual {
+      position: relative;
+      min-height: 570px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
+        #101010;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.45);
+    }
+
+    .brand-visual::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(242, 207, 123, 0.28);
+      border-radius: 16px;
+    }
+
+    .visual-card {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .visual-card.identity {
+      top: 54px;
+      left: 38px;
+      right: 48px;
+      padding: 26px;
+    }
+
+    .visual-card.campaign {
+      right: 32px;
+      bottom: 52px;
+      width: 58%;
+      padding: 22px;
+    }
+
+    .visual-card.metrics {
+      left: 30px;
+      bottom: 112px;
+      width: 42%;
+      padding: 20px;
+      background: rgba(5, 5, 5, 0.78);
+    }
+
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 98px;
+      height: 98px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(242, 207, 123, 0.5);
+      border-radius: 50%;
+      color: var(--gold-2);
+      font-size: 2.4rem;
+      font-weight: 900;
+    }
+
+    .visual-title {
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .visual-line {
+      height: 8px;
+      margin-top: 16px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--gold-2), rgba(255, 255, 255, 0.22));
+    }
+
+    .visual-line.short {
+      width: 58%;
+      opacity: 0.75;
+    }
+
+    .metric-number {
+      color: var(--gold-2);
+      font-size: 2.3rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .metric-label,
+    .campaign-label {
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .campaign-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .campaign-grid span {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      background: linear-gradient(145deg, rgba(242, 207, 123, 0.92), rgba(141, 102, 32, 0.72));
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.56fr);
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .pain-card,
+    .service-card,
+    .benefit-card,
+    .testimonial-card,
+    .step-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .pain-card:hover,
+    .service-card:hover,
+    .benefit-card:hover,
+    .testimonial-card:hover,
+    .step-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201, 155, 59, 0.42);
+      box-shadow: var(--shadow);
+    }
+
+    .pain-card {
+      padding: 28px;
+    }
+
+    .solution {
+      display: grid;
+      grid-template-columns: minmax(0, 0.62fr) minmax(260px, 0.38fr);
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 14px;
+      color: var(--white);
+      background: linear-gradient(135deg, #111, #050505);
+    }
+
+    .solution p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .solution .urdu {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .solution-stat {
+      display: grid;
+      place-items: center;
+      min-height: 150px;
+      border: 1px solid rgba(242, 207, 123, 0.28);
+      border-radius: 10px;
+      color: var(--gold-2);
+      font-size: clamp(2.2rem, 7vw, 4.8rem);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .services-grid,
+    .benefits-grid,
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card,
+    .benefit-card,
+    .testimonial-card {
+      padding: 28px;
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 26px;
+      border-radius: 8px;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+    }
+
+    .pricing {
+      background: var(--soft);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .price-card.popular {
+      z-index: 1;
+      color: var(--white);
+      border-color: rgba(242, 207, 123, 0.55);
+      background:
+        linear-gradient(150deg, rgba(242, 207, 123, 0.16), transparent 40%),
+        #070707;
+      box-shadow: 0 34px 80px rgba(0, 0, 0, 0.28);
+      transform: translateY(-14px) scale(1.035);
+    }
+
+    .price-card.popular:hover {
+      transform: translateY(-18px) scale(1.035);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-bottom: 18px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--black);
+      background: var(--gold-2);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .plan-name {
+      font-size: 1.18rem;
+      font-weight: 900;
+    }
+
+    .price {
+      margin: 10px 0 18px;
+      font-size: 2rem;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .popular .price small,
+    .popular p,
+    .popular li {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .features {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    .features li {
+      display: flex;
+      gap: 9px;
+      color: var(--muted);
+    }
+
+    .features li::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 7px;
+      height: 7px;
+      margin-top: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .timeline {
+      margin: auto 0 18px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .popular .timeline {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .urgency {
+      display: inline-flex;
+      margin-top: 22px;
+      padding: 11px 14px;
+      border: 1px solid rgba(201, 155, 59, 0.34);
+      border-radius: 999px;
+      color: var(--gold-dark);
+      background: rgba(242, 207, 123, 0.18);
+      font-weight: 900;
+    }
+
+    .process {
+      background: var(--black);
+    }
+
+    .process .section-head h2,
+    .process .section-head p {
+      color: var(--white);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .step-card {
+      position: relative;
+      padding: 30px 24px;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .step-card::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: block;
+      margin-bottom: 34px;
+      color: var(--gold-2);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .step-card p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .bonus {
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(201, 155, 59, 0.22), rgba(5, 5, 5, 0.94)),
+        #050505;
+    }
+
+    .bonus-box {
+      display: grid;
+      grid-template-columns: minmax(0, 0.74fr) minmax(220px, 0.26fr);
+      gap: 30px;
+      align-items: center;
+      padding: clamp(32px, 6vw, 64px);
+      border: 1px solid rgba(242, 207, 123, 0.24);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .bonus h2 {
+      color: var(--white);
+    }
+
+    .bonus p {
+      max-width: 680px;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .bonus-seal {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1;
+      border: 1px solid rgba(242, 207, 123, 0.42);
+      border-radius: 50%;
+      color: var(--gold-2);
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 950;
+      text-align: center;
+      line-height: 0.95;
+    }
+
+    .final-cta {
+      padding: 94px 0;
+      text-align: center;
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .final-cta h2,
+    .final-cta p {
+      color: var(--white);
+    }
+
+    .final-cta .lead,
+    .final-cta .urdu {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(300px, 0.55fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      color: var(--ink);
+      background: #fff;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 118px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid rgba(201, 155, 59, 0.22);
+      border-color: var(--gold);
+    }
+
+    .form-note {
+      min-height: 22px;
+      margin: 0;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .direct-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .direct-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+      background: var(--white);
+      font-weight: 800;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .direct-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(201, 155, 59, 0.42);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    footer {
+      padding: 46px 0;
+      color: var(--white);
+      background: #050505;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 700;
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin: 14px 0 0;
+    }
+
+    .footer-contact a {
+      color: rgba(255, 255, 255, 0.74);
+      font-weight: 700;
+    }
+
+    .footer-contact a:hover,
+    .footer-links a:hover {
+      color: var(--gold-2);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 35;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: var(--white);
+      background: #111;
+      border: 1px solid rgba(242, 207, 123, 0.42);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+      font-weight: 900;
+    }
+
+    .whatsapp-float svg {
+      color: #25d366;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .price-card.popular {
+        transform: none;
+      }
+
+      .price-card.popular:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        position: fixed;
+        inset: 74px 0 auto;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 16px 30px;
+        background: rgba(5, 5, 5, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero {
+        padding-top: 112px;
+      }
+
+      .hero-grid,
+      .section-head,
+      .solution,
+      .bonus-box,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-visual {
+        min-height: 430px;
+      }
+
+      .visual-card.identity {
+        top: 34px;
+        left: 26px;
+        right: 26px;
+      }
+
+      .visual-card.campaign {
+        right: 24px;
+        bottom: 36px;
+        width: 62%;
+      }
+
+      .visual-card.metrics {
+        left: 24px;
+        bottom: 92px;
+        width: 44%;
+      }
+
+      .problem-grid,
+      .services-grid,
+      .benefits-grid,
+      .testimonials-grid,
+      .steps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .hero-actions,
+      .final-cta .hero-actions {
+        display: grid;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .problem-grid,
+      .services-grid,
+      .benefits-grid,
+      .testimonials-grid,
+      .steps-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-visual {
+        min-height: 360px;
+      }
+
+      .logo-mark {
+        width: 74px;
+        height: 74px;
+        font-size: 1.8rem;
+      }
+
+      .visual-title {
+        font-size: 1.42rem;
+      }
+
+      .visual-card.identity,
+      .visual-card.campaign,
+      .visual-card.metrics {
+        padding: 18px;
+      }
+
+      .metric-number {
+        font-size: 1.65rem;
+      }
+
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+        min-height: 50px;
+        padding: 0 14px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Zubair Aatim home">
+        Zubair Aatim
+        <span>Professional Creative Studio</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Start Project</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero dark">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Premium brand growth for Pakistan</p>
+          <h1>Build a Brand That Sells - Not Just Looks Good</h1>
+          <p class="urdu">ایسا برانڈ بنائیں جو صرف خوبصورت نہیں بلکہ فروخت بھی کرے</p>
+          <p class="lead">We help businesses grow through strategic branding, powerful design, and smart marketing.</p>
+          <p class="urdu">ہم برانڈنگ، ڈیزائن اور مارکیٹنگ کے ذریعے آپ کے بزنس کو ترقی دیتے ہیں</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start Your Project</a>
+            <a class="btn btn-secondary" href="#packages">View Packages</a>
+          </div>
+          <div class="trust-row" aria-label="Trust signals">
+            <span class="trust-pill">Trusted by growing businesses</span>
+            <span class="trust-pill">Fast delivery | Affordable | Professional</span>
+          </div>
+        </div>
+
+        <div class="brand-visual reveal" aria-label="Agency branding visual">
+          <div class="visual-card identity">
+            <div class="logo-mark">ZA</div>
+            <div class="visual-title">Strategy<br/>Design<br/>Growth</div>
+            <div class="visual-line"></div>
+            <div class="visual-line short"></div>
+          </div>
+          <div class="visual-card metrics">
+            <div class="metric-number">3x</div>
+            <div class="metric-label">Sharper brand presence</div>
+          </div>
+          <div class="visual-card campaign">
+            <div class="campaign-label">Launch-ready content system</div>
+            <div class="campaign-grid" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Problem to solution</p>
+            <h2>Your business deserves to look as serious as your work.</h2>
+          </div>
+          <p class="lead">Most businesses do not lose because the product is weak. They lose because the brand does not build trust fast enough.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="pain-card reveal">
+            <h3>Your business looks unprofessional</h3>
+            <p class="urdu">آپ کا بزنس پروفیشنل نظر نہیں آتا</p>
+          </article>
+          <article class="pain-card reveal">
+            <h3>No consistent branding</h3>
+            <p class="urdu">برانڈنگ میں یکسانیت موجود نہیں</p>
+          </article>
+          <article class="pain-card reveal">
+            <h3>Low engagement on social media</h3>
+            <p class="urdu">سوشل میڈیا پر انگیجمنٹ کم ہے</p>
+          </article>
+        </div>
+
+        <div class="solution reveal">
+          <div>
+            <h3>We turn your business into a powerful brand with strategy + design.</h3>
+            <p class="urdu">ہم حکمت عملی اور ڈیزائن کے ذریعے آپ کے بزنس کو ایک مضبوط برانڈ بناتے ہیں۔</p>
+          </div>
+          <div class="solution-stat">Brand<br/>First</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Core services</p>
+            <h2>Everything your brand needs to look trusted and sell better.</h2>
+          </div>
+          <p class="lead">Built for YouTubers, startups, small shops, local businesses, and growing companies across Pakistan.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z" stroke="currentColor" stroke-width="2"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Branding</h3>
+            <p>Logo direction, identity systems, brand colors, and clear positioning that make you memorable.</p>
+            <p class="urdu">لوگو، برانڈ کلرز، شناخت اور پوزیشننگ جو آپ کے بزنس کو یادگار بناتی ہے۔</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v10H4V5Z" stroke="currentColor" stroke-width="2"/><path d="M8 19h8M12 15v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Designing</h3>
+            <p>Premium social posts, thumbnails, menus, flyers, and marketing creatives that look sharp.</p>
+            <p class="urdu">سوشل پوسٹس، تھمب نیلز، مینو، فلائرز اور مارکیٹنگ ڈیزائنز جو پروفیشنل لگتے ہیں۔</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 15V9l10-4v14L4 15Z" stroke="currentColor" stroke-width="2"/><path d="M14 9h2a4 4 0 0 1 0 8h-2" stroke="currentColor" stroke-width="2"/><path d="M7 16l1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Marketing</h3>
+            <p>Campaign ideas, content plans, and offer strategy to help your audience take action.</p>
+            <p class="urdu">کمپین آئیڈیاز، کانٹینٹ پلانز اور آفر اسٹریٹجی تاکہ آپ کے کسٹمر ایکشن لیں۔</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="packages">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Premium packages</p>
+            <h2>Choose the plan that matches your next growth move.</h2>
+          </div>
+          <div>
+            <p class="lead">Every package includes consultation so you know what to do after the design is delivered.</p>
+            <span class="urgency">Limited slots available</span>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <div class="plan-name">Launch</div>
+            <div class="price">Rs. 2,000</div>
+            <ul class="features">
+              <li>Basic social media design</li>
+              <li>1 professional creative</li>
+              <li>Brand color suggestion</li>
+              <li>Bonus: mini consultation</li>
+            </ul>
+            <div class="timeline">Timeline: 1-2 days</div>
+            <a class="btn btn-light" href="https://wa.me/923343599828?text=I%20want%20to%20choose%20the%20Launch%20Package" target="_blank" rel="noopener">Choose Plan</a>
+          </article>
+
+          <article class="price-card reveal">
+            <div class="plan-name">Startup</div>
+            <div class="price">Rs. 8,500</div>
+            <ul class="features">
+              <li>Logo refresh or starter identity</li>
+              <li>5 social media creatives</li>
+              <li>Basic brand direction</li>
+              <li>Bonus: growth consultation</li>
+            </ul>
+            <div class="timeline">Timeline: 3-5 days</div>
+            <a class="btn btn-light" href="https://wa.me/923343599828?text=I%20want%20to%20choose%20the%20Startup%20Package" target="_blank" rel="noopener">Choose Plan</a>
+          </article>
+
+          <article class="price-card popular reveal">
+            <span class="badge">Most Popular</span>
+            <div class="plan-name">Growth</div>
+            <div class="price">Rs. 18,500</div>
+            <ul class="features">
+              <li>Complete brand identity direction</li>
+              <li>12 social media creatives</li>
+              <li>Campaign concept and content plan</li>
+              <li>Bonus: full strategy consultation</li>
+            </ul>
+            <div class="timeline">Timeline: 7-10 days</div>
+            <a class="btn btn-primary" href="https://wa.me/923343599828?text=I%20want%20to%20choose%20the%20Growth%20Package" target="_blank" rel="noopener">Choose Plan</a>
+          </article>
+
+          <article class="price-card reveal">
+            <div class="plan-name">Scale</div>
+            <div class="price">Rs. 38,000</div>
+            <ul class="features">
+              <li>Brand system plus campaign design</li>
+              <li>25 premium marketing creatives</li>
+              <li>Monthly content structure</li>
+              <li>Bonus: business growth consultation</li>
+            </ul>
+            <div class="timeline">Timeline: 12-16 days</div>
+            <a class="btn btn-light" href="https://wa.me/923343599828?text=I%20want%20to%20choose%20the%20Scale%20Package" target="_blank" rel="noopener">Choose Plan</a>
+          </article>
+
+          <article class="price-card reveal">
+            <div class="plan-name">Empire</div>
+            <div class="price">Rs. 70,000<small>+</small></div>
+            <ul class="features">
+              <li>Custom brand and growth system</li>
+              <li>Full launch campaign support</li>
+              <li>High-volume design execution</li>
+              <li>Bonus: premium consultation sessions</li>
+            </ul>
+            <div class="timeline">Timeline: Custom</div>
+            <a class="btn btn-light" href="https://wa.me/923343599828?text=I%20want%20to%20discuss%20the%20Empire%20Package" target="_blank" rel="noopener">Choose Plan</a>
+          </article>
+
+          <article class="price-card reveal">
+            <div class="plan-name">Consultancy</div>
+            <div class="price">Rs. 1,000 <small>/ 30 min</small></div>
+            <ul class="features">
+              <li>One-to-one brand guidance</li>
+              <li>Business and content direction</li>
+              <li>Clear next-step action plan</li>
+              <li>Bonus: package recommendation</li>
+            </ul>
+            <div class="timeline">Duration: 30 minutes</div>
+            <a class="btn btn-light" href="https://wa.me/923343599828?text=I%20want%20to%20book%20a%2030-minute%20Consultancy%20Call%20for%20Rs.%201%2C000" target="_blank" rel="noopener">Book Call</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process dark" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Our process</p>
+            <h2>A clear process that keeps your project focused.</h2>
+          </div>
+          <p class="lead">You get structure, direction, and support from the first conversation to final delivery.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <h3>Understanding your business</h3>
+            <p class="urdu">آپ کے بزنس اور گولز کو سمجھنا</p>
+          </article>
+          <article class="step-card reveal">
+            <h3>Strategy & concept</h3>
+            <p class="urdu">اسٹریٹجی اور تخلیقی کانسیپٹ بنانا</p>
+          </article>
+          <article class="step-card reveal">
+            <h3>Design execution</h3>
+            <p class="urdu">پروفیشنل ڈیزائن پر عمل درآمد</p>
+          </article>
+          <article class="step-card reveal">
+            <h3>Delivery & support</h3>
+            <p class="urdu">فائنل ڈیلیوری اور سپورٹ</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Results that matter</p>
+            <h2>Not just files. A stronger business presence.</h2>
+          </div>
+          <p class="lead">The goal is simple: make customers trust you faster, remember you longer, and choose you with more confidence.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card reveal"><h3>More professional brand image</h3><p>Your business starts looking credible across every customer touchpoint.</p></article>
+          <article class="benefit-card reveal"><h3>Better customer trust</h3><p>Consistent visuals and messaging make your offer feel more reliable.</p></article>
+          <article class="benefit-card reveal"><h3>Higher engagement</h3><p>Sharper content gives people more reason to stop, read, and respond.</p></article>
+          <article class="benefit-card reveal"><h3>Business growth</h3><p>Strategy-led design helps turn attention into leads and repeat customers.</p></article>
+          <article class="benefit-card reveal"><h3>Clearer positioning</h3><p>Your audience understands what you sell and why it matters.</p></article>
+          <article class="benefit-card reveal"><h3>Faster launch</h3><p>Organized execution helps you move from idea to market quickly.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Client words</p>
+            <h2>Clean work. Clear direction. Real confidence.</h2>
+          </div>
+          <p class="lead">A few realistic notes from the kinds of businesses we help every month.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card reveal">
+            <p>"Our food page finally looked premium. The menu, posts, and offer design made customers take us more seriously."</p>
+            <h3>Hassan R.</h3>
+            <p>Restaurant Owner, Lahore</p>
+          </article>
+          <article class="testimonial-card reveal">
+            <p>"The thumbnail and branding style gave my channel a proper identity. It felt clean, consistent, and professional."</p>
+            <h3>Areeba K.</h3>
+            <p>YouTube Creator, Karachi</p>
+          </article>
+          <article class="testimonial-card reveal">
+            <p>"We needed a launch look quickly. Zubair gave us strategy, designs, and a plan that made our startup feel ready."</p>
+            <h3>Bilal S.</h3>
+            <p>Startup Founder, Islamabad</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bonus">
+      <div class="container">
+        <div class="bonus-box reveal">
+          <div>
+            <p class="eyebrow">Bonus value</p>
+            <h2>Free Consultation Included in Every Package</h2>
+            <p class="lead">We guide you on how to grow after design, including what to post, how to present your offer, and how to turn your new look into real leads.</p>
+            <p class="urdu">ہر پیکج میں مشاورت شامل ہے تاکہ ڈیزائن کے بعد آپ کو گروتھ کا واضح راستہ ملے۔</p>
+          </div>
+          <div class="bonus-seal">Free<br/>Call</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+      <div class="container">
+        <p class="eyebrow">Start today</p>
+        <h2>Ready to Grow Your Brand?</h2>
+        <p class="urdu">کیا آپ اپنے بزنس کو اگلے لیول پر لے جانا چاہتے ہیں؟</p>
+        <p class="lead">Send a message, choose a package, or share your project details. We will help you pick the smartest next step.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a class="btn btn-primary" href="https://wa.me/923343599828?text=Hi%20Zubair%2C%20I%20want%20to%20grow%20my%20brand" target="_blank" rel="noopener">WhatsApp Now</a>
+          <a class="btn btn-secondary" href="#lead-form">Start Project</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Tell us what you want to build.</h2>
+          <p class="lead">Use the form for a quick project brief. For fastest response, WhatsApp is best.</p>
+          <p class="urdu">اپنے پروجیکٹ کی تفصیل بھیجیں۔ فوری جواب کے لیے واٹس ایپ بہتر ہے۔</p>
+          <div class="direct-links" aria-label="Direct contact links">
+            <a class="direct-link" href="https://wa.me/923343599828?text=Hi%20Zubair%2C%20I%20want%20to%20start%20a%20project" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="direct-link" href="tel:+923343599828">Call</a>
+            <a class="direct-link" href="mailto:aatim.official@gmail.com">Email</a>
+            <a class="direct-link" href="https://www.fiverr.com/zubairaatim/" target="_blank" rel="noopener">Fiverr</a>
+          </div>
+        </div>
+
+        <form id="lead-form" class="reveal">
+          <input name="name" type="text" placeholder="Your name" required />
+          <input name="phone" type="tel" placeholder="WhatsApp number" required />
+          <select name="package" required>
+            <option value="">Select package</option>
+            <option>Launch - Rs. 2,000</option>
+            <option>Startup - Rs. 8,500</option>
+            <option>Growth - Rs. 18,500</option>
+            <option>Scale - Rs. 38,000</option>
+            <option>Empire - Rs. 70,000+</option>
+            <option>Consultancy - Rs. 1,000 / 30 min</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your business"></textarea>
+          <button class="btn btn-primary" type="submit">Send Project Brief</button>
+          <p class="form-note" id="formNote" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">Zubair Aatim <span>Professional Creative Studio</span></div>
+        <p class="footer-contact">
+          <a href="https://wa.me/923343599828" target="_blank" rel="noopener">WhatsApp: +92 334 3599828</a>
+          <a href="tel:+923343599828">Call: +92 334 3599828</a>
+          <a href="mailto:aatim.official@gmail.com">aatim.official@gmail.com</a>
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/zubair-aatim/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.facebook.com/zubairaatim" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.fiverr.com/zubairaatim/" target="_blank" rel="noopener">Fiverr</a>
+        <a href="mailto:aatim.official@gmail.com">Gmail</a>
+        <a href="https://wa.me/923343599828" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/923343599828?text=Hi%20Zubair%2C%20I%20want%20to%20start%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M7.6 20.2 4 21l.8-3.5A8.3 8.3 0 1 1 7.6 20.2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M9.2 8.6c.2-.4.4-.5.7-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.3.1.5-.1.7l-.4.5c-.1.2-.2.3 0 .6.4.7 1 1.3 1.7 1.8.3.2.4.2.6 0l.6-.7c.2-.2.4-.2.7-.1l1.6.8c.3.1.4.3.4.6 0 .7-.5 1.4-1.1 1.6-.7.3-2.5.1-4.4-1.5-1.9-1.5-3-3.6-3.1-4.6 0-.4.3-.9.6-1.2Z" fill="currentColor"/>
+    </svg>
+    WhatsApp
+  </a>
+
+  <script>
+    const menuBtn = document.querySelector("#menuBtn");
+    const navLinks = document.querySelector("#navLinks");
+    const form = document.querySelector("#lead-form");
+    const formNote = document.querySelector("#formNote");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open", isOpen);
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = data.get("name");
+      const phone = data.get("phone");
+      const packageName = data.get("package");
+      const message = data.get("message") || "No extra details added.";
+      const whatsappMessage = [
+        "Hi Zubair, I want to start a project.",
+        `Name: ${name}`,
+        `Phone: ${phone}`,
+        `Package: ${packageName}`,
+        `Details: ${message}`
+      ].join("\n");
+      const whatsappUrl = `https://wa.me/923343599828?text=${encodeURIComponent(whatsappMessage)}`;
+      formNote.textContent = `Thanks ${name}. Opening WhatsApp with your ${packageName} brief.`;
+      window.open(whatsappUrl, "_blank", "noopener");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
